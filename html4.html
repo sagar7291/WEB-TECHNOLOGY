@@ -1,0 +1,71 @@
+<html>
+<head>
+<title> program 5 </title>
+<script type="text/javascript">
+function calculate()
+{
+	var c1=document.getElementById("c1");
+	    c2=document.getElementById("c2");
+	    c3=document.getElementById("c3");
+
+	 t1=document.getElementById("t1");
+	 t2=document.getElementById("t2");
+	 t3=document.getElementById("t3");
+	
+	total = 0;
+
+	if(c1.checked)
+	{
+		total += +c1.value;
+	}
+	if(c2.checked)
+	{
+		total += +c2.value;
+	}
+	if(c3.checked)
+	{
+		total += +c3.value;
+	}
+	
+tax = total * 0.05;
+tax = tax.toFixed(2);
+t1 = +tax + +total;
+
+alert('Total cost \t \t= ' + total +'\n sales tax(5%O) \t= '+ tax +'\n-------------------\n' + 'your total cost \t= ' + t1 );
+}
+
+</script>
+</head>
+<body>
+<center>
+<form method="">
+<h1> <u>WELCOME TO FRUITS SHOP </u></h1> <br/> <br/>
+
+<table>
+<tr>
+<td>
+<input type="checkbox" name="c1" id="c1" value="59"/>
+ Apples(59/-)
+</td>
+</tr>
+
+<tr>
+<td>
+<input type="checkbox" name="c2" id="c2" value="49"/> 
+Orange(49/-)
+</td>
+</tr>
+
+<tr>
+<td>
+<input type="checkbox" name="c3" id="c3" value="39"/>
+ Banana(39/-)
+</td>
+</tr>
+</table>
+<br/>
+<input type="submit" value="SUBMIT" onClick="calculate()"/>
+</form>
+</center>
+</body>
+</html>

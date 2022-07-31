@@ -1,0 +1,90 @@
+<html>
+<head>
+<title> program 5 </title>
+<script type="text/javascript">
+function showhide1(c1)
+{
+	var t1 = document.getElementById("t1");
+	t1.style.display = c1.checked ? "block" : "none";
+}
+function showhide2(c2)
+{
+	var t2 = document.getElementById("t2");
+	t2.style.display = c2.checked ? "block" : "none";
+}
+function showhide3(c3)
+{
+	var t3 = document.getElementById("t3");
+	t3.style.display = c3.checked ? "block" : "none";
+}
+function calculate()
+{
+	var c1=document.getElementById("c1");
+var c2=document.getElementById("c2");
+	var c3=document.getElementById("c3");
+
+	 var t1=document.getElementById("t1");
+	 var t2=document.getElementById("t2");
+	 var t3=document.getElementById("t3");
+	
+	total=0;
+
+	if(c1.checked)
+	{
+		total += +c1.value *t1.value;
+	}
+	if(c2.checked)
+	{
+		total += +c2.value*t2.value;
+	}
+	if(c3.checked)
+	{
+		total += +c3.value*t3.value;
+	}
+	tax = total * 0.05;
+            tax = tax.toFixed(2);
+            t1 = +tax + +total;
+alert("Total cost \t \t= " + total +"\n sales tax(5%) \t= "+ tax +"\n-------------------\n" + "your total cost \t= " + t1 );
+}
+</script>
+</head>
+<body>
+<center>
+<form method="">
+<h1> <U> WELCOME TO FRUITS SHOP</U> </h1><BR/><BR/>
+<table>
+<tr>
+	<td>
+		<input type="checkbox" name="c1" id="c1" value="59" onclick="showhide1(this)"/> 
+		Apples(59/-)
+	</td>
+<td>
+		<input type="text"  id="t1" value="1" style="display:none;" size="2"/>
+	</td>
+</tr>
+<tr>
+	<td>
+	      <input type="checkbox" name="c2" id="c2" value="49" onclick="showhide2(this)"/> 
+		  Orange(49/-)
+	</td>
+	<td>
+		<input type="text" id="t2" value="1" style="display:none;" size="2"/>
+	</td>
+</tr>
+<tr>
+	<td>
+		<input type="checkbox" name="c3" id="c3" value="39" onclick="showhide3(this)"/>
+		Banana(39/-)
+	</td>
+		<td>
+		<input type="text" id="t3" value="1" style="display:none;" size="2"/>
+	</td>
+</tr>
+</table>
+<BR/> <BR/>
+<input type="submit" value="SUBMIT" onclick="calculate()"/>
+</form>
+</CENTER>
+</body>
+</html>
+
